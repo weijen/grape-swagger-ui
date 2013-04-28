@@ -305,7 +305,7 @@ function program5(depth0,data) {
 function program7(depth0,data) {
   
   
-  return "\n                    <div style='margin:0;padding:0;display:inline'></div>\n                    <h4>Status Codes</h4>\n                    <table class='fullwidth'>\n                        <thead>\n                        <tr>\n                            <th>HTTP Status Code</th>\n                            <th>Reason</th>\n                        </tr>\n                        </thead>\n                        <tbody class=\"operation-status\">\n                        \n                        </tbody>\n                    </table>\n                    ";}
+  return "\n                    <div style='margin:0;padding:0;display:inline'></div>\n                    <h4>Error Status Codes</h4>\n                    <table class='fullwidth'>\n                        <thead>\n                        <tr>\n                            <th>HTTP Status Code</th>\n                            <th>Reason</th>\n                        </tr>\n                        </thead>\n                        <tbody class=\"operation-status\">\n                        \n                        </tbody>\n                    </table>\n                    ";}
 
 function program9(depth0,data) {
   
@@ -584,7 +584,7 @@ function program9(depth0,data) {
 function program10(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n			<input minlength='0' name='";
+  buffer += "\n			<input class='parameter' minlength='0' name='";
   foundHelper = helpers.name;
   stack1 = foundHelper || depth0.name;
   if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
@@ -600,7 +600,7 @@ function program10(depth0,data) {
 function program12(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n			<input minlength='0' name='";
+  buffer += "\n			<input class='parameter' minlength='0' name='";
   foundHelper = helpers.name;
   stack1 = foundHelper || depth0.name;
   if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
@@ -721,7 +721,7 @@ function program11(depth0,data) {
   stack1 = foundHelper || depth0.name;
   if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
   else if(stack1=== undef) { stack1 = helperMissing.call(depth0, "name", { hash: {} }); }
-  buffer += escapeExpression(stack1) + "</td>\n<td>\n    <select name='";
+  buffer += escapeExpression(stack1) + "</td>\n<td>\n    <select class='parameter' name='";
   foundHelper = helpers.name;
   stack1 = foundHelper || depth0.name;
   if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
@@ -781,14 +781,34 @@ function program1(depth0,data) {
 
 function program3(depth0,data) {
   
-  var buffer = "", stack1;
+  var buffer = "", stack1, stack2;
   buffer += "\n        ";
+  foundHelper = helpers.defaultValue;
+  stack1 = foundHelper || depth0.defaultValue;
+  stack2 = helpers['if'];
+  tmp1 = self.program(4, program4, data);
+  tmp1.hash = {};
+  tmp1.fn = tmp1;
+  tmp1.inverse = self.program(6, program6, data);
+  stack1 = stack2.call(depth0, stack1, tmp1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n    ";
+  return buffer;}
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n            ";
   foundHelper = helpers.defaultValue;
   stack1 = foundHelper || depth0.defaultValue;
   if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
   else if(stack1=== undef) { stack1 = helperMissing.call(depth0, "defaultValue", { hash: {} }); }
-  buffer += escapeExpression(stack1) + "\n    ";
+  buffer += escapeExpression(stack1) + "\n        ";
   return buffer;}
+
+function program6(depth0,data) {
+  
+  
+  return "\n            (empty)\n        ";}
 
   buffer += "<td class='code'>";
   foundHelper = helpers.name;
@@ -839,14 +859,34 @@ function program1(depth0,data) {
 
 function program3(depth0,data) {
   
-  var buffer = "", stack1;
+  var buffer = "", stack1, stack2;
   buffer += "\n        ";
+  foundHelper = helpers.defaultValue;
+  stack1 = foundHelper || depth0.defaultValue;
+  stack2 = helpers['if'];
+  tmp1 = self.program(4, program4, data);
+  tmp1.hash = {};
+  tmp1.fn = tmp1;
+  tmp1.inverse = self.program(6, program6, data);
+  stack1 = stack2.call(depth0, stack1, tmp1);
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n    ";
+  return buffer;}
+function program4(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n            ";
   foundHelper = helpers.defaultValue;
   stack1 = foundHelper || depth0.defaultValue;
   if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
   else if(stack1=== undef) { stack1 = helperMissing.call(depth0, "defaultValue", { hash: {} }); }
-  buffer += escapeExpression(stack1) + "\n    ";
+  buffer += escapeExpression(stack1) + "\n        ";
   return buffer;}
+
+function program6(depth0,data) {
+  
+  
+  return "\n            (empty)\n        ";}
 
   buffer += "<td class='code required'>";
   foundHelper = helpers.name;
@@ -965,7 +1005,7 @@ function program9(depth0,data) {
 function program10(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n			<input class='required' type='file' name='";
+  buffer += "\n			<input class='parameter' class='required' type='file' name='";
   foundHelper = helpers.name;
   stack1 = foundHelper || depth0.name;
   if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
@@ -991,7 +1031,7 @@ function program12(depth0,data) {
 function program13(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n				<input class='required' minlength='1' name='";
+  buffer += "\n				<input class='parameter required' minlength='1' name='";
   foundHelper = helpers.name;
   stack1 = foundHelper || depth0.name;
   if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
@@ -1007,7 +1047,7 @@ function program13(depth0,data) {
 function program15(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n				<input class='required' minlength='1' name='";
+  buffer += "\n				<input class='parameter required' minlength='1' name='";
   foundHelper = helpers.name;
   stack1 = foundHelper || depth0.name;
   if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
@@ -1550,7 +1590,7 @@ templates['status_code'] = template(function (Handlebars,depth0,helpers,partials
           _ref2 = this.model.parameters;
           for (_k = 0, _len2 = _ref2.length; _k < _len2; _k++) {
             param = _ref2[_k];
-            if (param.paramType === 'body' && param.name !== 'file') {
+            if ((param.paramType === 'body' || 'form') && param.name !== 'file' && (map[param.name] != null)) {
               bodyParam.append(param.name, map[param.name]);
             }
           }
@@ -1563,7 +1603,9 @@ templates['status_code'] = template(function (Handlebars,depth0,helpers,partials
           _ref3 = this.model.parameters;
           for (_l = 0, _len3 = _ref3.length; _l < _len3; _l++) {
             param = _ref3[_l];
-            bodyParam.append(param.name, map[param.name]);
+            if (map[param.name] != null) {
+              bodyParam.append(param.name, map[param.name]);
+            }
           }
         } else {
           bodyParam = null;
@@ -1603,6 +1645,11 @@ templates['status_code'] = template(function (Handlebars,depth0,helpers,partials
         if (paramContentTypeField) {
           obj.contentType = paramContentTypeField;
         }
+        log('content type = ' + obj.contentType);
+        if (!obj.data || (obj.type === 'GET' || obj.type === 'DELETE')) {
+          obj.contentType = false;
+        }
+        log('content type is now = ' + obj.contentType);
         responseContentTypeField = $('.content > .content-type > div > select[name=contentType]', $(this.el)).val();
         if (responseContentTypeField) {
           obj.headers = obj.headers != null ? obj.headers : {};
@@ -1729,7 +1776,7 @@ templates['status_code'] = template(function (Handlebars,depth0,helpers,partials
 
     OperationView.prototype.toggleOperationContent = function() {
       var elem;
-      elem = $('#' + this.model.resourceName + "_" + this.model.nickname + "_" + this.model.httpMethod + "_" + this.model.number + "_content");
+      elem = $('#' + Docs.escapeResourceName(this.model.resourceName) + "_" + this.model.nickname + "_" + this.model.httpMethod + "_" + this.model.number + "_content");
       if (elem.is(':visible')) {
         return Docs.collapseOperation(elem);
       } else {
